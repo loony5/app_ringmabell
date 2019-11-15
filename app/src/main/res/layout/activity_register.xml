@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:paddingLeft="40dp"
+    android:paddingRight="40dp"
+    android:paddingBottom="30dp">
+
+    <TextView
+        android:id="@+id/txt_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="회원가입"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidLine1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16"/>
+
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="이메일"
+        android:inputType="textEmailAddress"
+        android:textSize="16dp"
+        app:layout_constraintTop_toTopOf="@+id/guidLine1"
+        app:layout_constraintBottom_toTopOf="@+id/edit_name"/>
+
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="이름"
+        android:inputType="textPersonName"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/edit_email"
+        app:layout_constraintBottom_toTopOf="@id/edit_password"/>
+
+    <EditText
+        android:id="@+id/edit_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/edit_name"
+        app:layout_constraintBottom_toTopOf="@+id/edit_c_password"/>
+
+    <EditText
+        android:id="@+id/edit_c_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호 확인"
+        android:inputType="textPassword"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/edit_password"
+        app:layout_constraintBottom_toTopOf="@+id/edit_phone"/>
+
+    <EditText
+        android:id="@+id/edit_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="연락처"
+        android:inputType="phone"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/edit_c_password"
+        app:layout_constraintBottom_toTopOf="@+id/agree"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/agree"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_c_password"
+        app:layout_constraintBottom_toTopOf="@id/guidLine2"
+        android:background="@drawable/rectangle">
+
+        <CheckBox
+            android:id="@+id/chx_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전체 동의"
+            android:textSize="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/chx_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="이용약관 동의"
+                android:textSize="10dp"/>
+
+            <TextView
+                android:id="@+id/txt_first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginRight="20dp"
+                android:text="내용 보기"
+                android:textSize="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/chx_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="개인정보 취급방침 동의"
+                android:textSize="10dp"/>
+
+            <TextView
+                android:id="@+id/txt_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginRight="20dp"
+                android:text="내용 보기"
+                android:textSize="10dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <Button
+        android:id="@+id/btn_register_success"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="가입하기"
+        app:layout_constraintTop_toBottomOf="@id/guidLine2"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
